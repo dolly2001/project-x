@@ -4,6 +4,7 @@ dotenv.config({
     path: '.env'
 })
 import authRouter from './routes/auth.router.js'
+import postRouter from './routes/post.router.js'
 import connectDB from './db/connectMongoDB.js'
 import cookieParser from 'cookie-parser'
 import userRouter from './routes/user.router.js'
@@ -26,6 +27,7 @@ app.use(cookieParser())
 
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
+app.use("/api/post", postRouter)
 
 
 
