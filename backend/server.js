@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config({
     path: '.env'
 })
+import notificationRouter from './routes/notification.router.js'
 import authRouter from './routes/auth.router.js'
 import postRouter from './routes/post.router.js'
 import connectDB from './db/connectMongoDB.js'
@@ -28,7 +29,7 @@ app.use(cookieParser())
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
 app.use("/api/post", postRouter)
-
+app.use("/api/notifications", notificationRouter)
 
 
 
